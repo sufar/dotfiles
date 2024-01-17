@@ -217,6 +217,18 @@ window#waybar.hidden {
   background: #292c3a;
 }
 
+#battery {
+  margin-top: 6px;
+  margin-left: 8px;
+  padding-left: 10px;
+  margin-bottom: 0px;
+  padding-right: 10px;
+  border-radius: 10px;
+  transition: none;
+  color: #e68333;
+  background: #292c3a;
+}
+
 #custom-launcher {
   font-size: 24px;
   margin-top: 6px;
@@ -230,6 +242,35 @@ window#waybar.hidden {
 }
 
 #custom-power {
+  font-size: 20px;
+  margin-top: 6px;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding-left: 10px;
+  padding-right: 5px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  transition: none;
+  color: #161320;
+  background: #f28fad;
+}
+#custom-song,
+#custom-weather,
+#custom-song-title,
+#custom-song-post {
+  font-size: 20px;
+  margin-top: 6px;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding-left: 10px;
+  padding-right: 5px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  transition: none;
+  color: #161320;
+  background: #f28fad;
+}
+#custom-media {
   font-size: 20px;
   margin-top: 6px;
   margin-left: 8px;
