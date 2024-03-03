@@ -1,30 +1,45 @@
 {
-	"layer": "top",
-	"modules-left": ["custom/launcher","hyprland/workspaces","tray",
-	"custom/song-title",
-	"custom/song-post",
-	"custom/song",],
-	"modules-center": [],
-	"modules-right": ["custom/weather","cpu","memory","pulseaudio","disk","network","temperature", "backlight","battery","clock"],
-    "hyprland/workspaces": {
-        "format": "{icon}",
-        "on-click": "activate",
-        "format-icons": {
-          "1": " ",
-          "2": " ",
-          "3": "󰨞 ",
-          "4": " ",
-          "5": " ",
-          "urgent": "󰊠 ",
-          "active": "󰮯 ",
-          "default": " "
-        },
-        "sort-by-number": true
-      },      
+  "layer": "top",
+  "modules-left": [
+    "custom/launcher",
+    "hyprland/workspaces",
+    "tray",
+    "custom/song-title",
+    "custom/song-post",
+    "custom/song"
+  ],
+  "modules-center": [],
+  "modules-right": [
+    "custom/weather",
+    "cpu",
+    "memory",
+    "pulseaudio",
+    "disk",
+    "network",
+    "temperature",
+    "backlight",
+    "battery",
+    "clock"
+  ],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": " ",
+      "2": " ",
+      "3": "󰨞 ",
+      "4": " ",
+      "5": " ",
+      "urgent": "󰊠 ",
+      "active": "󰮯 ",
+      "default": " "
+    },
+    "sort-by-number": true
+  },
   "network": {
     "interval": 5,
     "format-wifi": "󰒢 {essid}",
-    "format-alt" : "󰒢 {bandwidthTotalBits}",
+    "format-alt": "󰒢 {bandwidthTotalBits}",
     "on-click": "",
     "on-click-right": "nm-connection-editor",
     "format-ethernet": " {ipaddr}/{cidr}",
@@ -33,18 +48,22 @@
     "tooltip-format": "{essid} {signalStrength}%",
     "format-disconnected": ""
   },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{icon} {temperatureC}°C",
-        "format-icons": ["", "", ""]
-    },
-	"tray":{
-		"icon-size":18,
-		"spacing": 10
-	},
+  "temperature": {
+    // "thermal-zone": 2,
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    // "format-critical": "{temperatureC}°C {icon}",
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  },
   "custom/weather": {
     "format": "{}",
     "return-type": "json",
@@ -52,27 +71,6 @@
     "interval": 300,
     "tooltip": true
   },
-  "custom/media": {
-    "format": "{}",
-    "return-type": "json",
-    "max-length": 20,
-    "exec": "$HOME/.config/waybar/scripts/mediaplayer.sh 2> /dev/null",
-    "interval": 1,
-    "tooltip": true,
-    "on-click": "playerctl play-pause"
-  },
-"custom/song":{
-  "exec": "~/.config/waybar/scripts/song.sh",
-  "interval": 1,
-},
-"custom/song-title":{
-  "exec": "~/.config/waybar/scripts/song.sh title",
-  "interval": 1,
-},
-"custom/song-post":{
-  "exec": "~/.config/waybar/scripts/song.sh post",
-  "interval": 1,
-},
   "battery": {
     "states": {
       "good": 95,
@@ -92,9 +90,9 @@
       ""
     ]
   },
-    "clock": {
-        //"format": "{:󱦺 %I:%M %p  %d/%m/%Y}"
-        "format": "{: %m-%d 󰥔 %H:%M}",
+  "clock": {
+    //"format": "{:󱦺 %I:%M %p  %d/%m/%Y}"
+    "format": "{: %m-%d 󰥔 %H:%M}",
     "interval": 1,
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
@@ -119,7 +117,7 @@
       "on-scroll-up": "shift_up",
       "on-scroll-down": "shift_down"
     }
-    },
+  },
   "backlight": {
     "tooltip": false,
     "format": "{icon} {}%",
@@ -134,45 +132,48 @@
       ]
     }
   },
-    "cpu": {
-        "format": "{usage}% ",
-        "interval": 2,
-        "tooltip": true
-    },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": "󰖁 {icon} {format_source}",
-        "format-muted": "󰖁 {format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
+  "cpu": {
+    "format": "{usage}% ",
+    "interval": 2,
+    "tooltip": true
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": "󰖁 {icon} {format_source}",
+    "format-muted": "󰖁 {format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
       "hands-free": "",
       "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
     "tooltip": false,
     "on-click": "sleep 0.1 && pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "on-click-right": "sleep 0.1 && pavucontrol"
-    },
-
-    "memory": {
-        "interval": 30,
-        "format": "{used:0.1f}G/{total:0.1f}G "
-    },
-    "disk": {
-        "interval": 30,
-        "format": "󰋊 / {percentage_free}% ",
-        "path": "/"
-    },
-    "custom/launcher":{
-        "format": " ",
-        "on-click": "rofi -show drun -modi drun -show-icons",
-        "on-click-right": "killall rofi"
-    }
+  },
+  "memory": {
+    "interval": 30,
+    "format": "{used:0.1f}G/{total:0.1f}G "
+  },
+  "disk": {
+    "interval": 30,
+    "format": "󰋊 / {percentage_free}% ",
+    "path": "/"
+  },
+  "custom/launcher": {
+    "format": " ",
+    "on-click": "rofi -show drun -modi drun -show-icons",
+    "on-click-right": "killall rofi"
+  }
 }
