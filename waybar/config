@@ -4,9 +4,6 @@
     "custom/launcher",
     "hyprland/workspaces",
     "tray",
-    "custom/song-title",
-    "custom/song-post",
-    "custom/song"
   ],
   "modules-center": [],
   "modules-right": [
@@ -91,8 +88,8 @@
     ]
   },
   "clock": {
-    //"format": "{:󱦺 %I:%M %p  %d/%m/%Y}"
-    "format": "{: %m-%d 󰥔 %H:%M}",
+    //"format": "{:󱦺 %I:%M %p  %d/%m/%Y}",
+    "format": " {:%m-%d 󰥔 %H:%M}",
     "interval": 1,
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
