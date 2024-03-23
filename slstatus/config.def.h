@@ -65,15 +65,22 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ cpu_perc, "^b#a6d189^^c#414559^  ^b#303446^^c#98c379^ %s%% ", NULL},
-	{ ram_used, "^b#81c8be^^c#303446^  ^b#303446^^c#81c8be^ %s ", NULL},
-	{ load_avg, "^b#dd7878^^c#303446^  ^b#303446^^c#ef9f76^ %s ", NULL},
+	// { cpu_perc, "^b#a6d189^^c#414559^  ^b#303446^^c#98c379^ %s%% ", NULL},
+	// { ram_used, "^b#81c8be^^c#303446^  ^b#303446^^c#81c8be^ %s ", NULL},
+	// { load_avg, "^b#dd7878^^c#303446^  ^b#303446^^c#ef9f76^ %s ", NULL},
 	// { temp, "^c#303446^^b#81c8be^%s°C|", "/sys/class/thermal/thermal_zone0/temp"},
 	// { run_command, "ﯦ%s%%|","light -G | awk -F '.' '{ print $1 }'"},
 	// { run_command, "ﯦ%s%%|","light -G | awk -F '.' '{ print ^c#ef9f76^$1 }'"},
-	{ run_command, "^b#8caaee^^c#414559^  ^b#303446^^c#c6d0f5^ %s%% ", "pactl list sinks | grep $(pactl info | grep 'Default Sink' | awk '{print $3}') -A 7 | sed -n '8p' | awk '{printf int($5)}'"},
+	// { run_command, "^b#8caaee^^c#414559^  ^b#303446^^c#c6d0f5^ %s%% ", "pactl list sinks | grep $(pactl info | grep 'Default Sink' | awk '{print $3}') -A 7 | sed -n '8p' | awk '{printf int($5)}'"},
 	//{ run_command, "%s|", "amixer sget Master | awk -F '[][]' '/Left:/ { print $2 }'"},
 	// { run_command, "%s|", "amixer sget Capture | awk -F '[][]' '/Left:/ { print $2 }'"},
+	// { datetime, "^b#f4b8e4^^c#303446^  ^b#303446^^c#f4b8e4^ %s",  "%m-%d %T" },
+	{ cpu_perc, " %s%% ", NULL},
+	{ ram_used, " %s ", NULL},
+	{ load_avg, " %s ", NULL},
+	{ temp, "%s°C|", "/sys/class/thermal/thermal_zone0/temp"},
+	{ run_command, " %s%% ", "pactl list sinks | grep $(pactl info | grep 'Default Sink' | awk '{print $3}') -A 7 | sed -n '8p' | awk '{printf int($5)}'"},
+	{ run_command, "ﯦ%s%%|","light -G | awk -F '.' '{ print $1 }'"},
 	{ battery_perc,	"%s%|", "BAT0"},
-	{ datetime, "^b#f4b8e4^^c#303446^  ^b#303446^^c#f4b8e4^ %s",  "%m-%d %T" },
+	{ datetime, " %s",  "%m-%d %T" },
 };
